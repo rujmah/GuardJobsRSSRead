@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'sinatra/reloader'
+#require 'sinatra/reloader'
 require 'rss/2.0'
 require 'open-uri'
 require 'haml'
