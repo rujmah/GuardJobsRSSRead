@@ -1,0 +1,4 @@
+sinatra
+RSS/2.0
+open-uri
+haml
