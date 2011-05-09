@@ -1,0 +1,19 @@
+!!! Strict
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %title
+      = @title || 'Jobs RSS Reader App'
+    %link{:rel => "stylesheet", :href => "/application.css", :type => "text/css", :media => "all"}
+    %link{:rel => "stylesheet", :href => "/style.css", :type => "text/css", :media => "all"}
+    %link{:rel => "stylesheet", :href => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css", :type => "text/css"}
+    %script{:type => "text/javascript", :src => "http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js" }
+    %script{:type => "text/javascript", :src => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" }
+    %script{:type => "text/javascript", :src => "http://jqueryjs.googlecode.com/files/jquery-1.2.6.min.js" }
+    %script{:type => "text/javascript", :src => "https://ajax.googleapis.com/ajax/libs/dojo/1.6.0/dojo/dojo.xd.js" }
+    
+  %body
+    %div{:id => "contents"}
+      %span{:id => "logo"}
+      %span{:id => "title"} Jobs RSS Reader App
+      .content
+        = yield

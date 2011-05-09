@@ -1,0 +1,29 @@
+.sample_container
+	.select_feed
+		%form#select_feed_form(action = '/sample/select' method = 'post')
+			Select Category:
+			%select(name='feed')
+				%option(value='MentalHealth') Mental Health
+				%option(value='Nursing') Nursing
+				%option(value='SexualHealth') Sexual Health
+			%input(type='submit' value='Go')
+	.sample_left_text
+		%h3 Really Cool Article About Stuff
+		%p
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor augue non mi congue id commodo lacus eleifend. Maecenas mollis consequat sapien tristique vestibulum. Curabitur ac condimentum sem. Vestibulum auctor bibendum enim non faucibus. Quisque tortor augue, sodales vitae dictum ac, porttitor vel nisl. Curabitur nisi elit, pharetra in convallis eget, ullamcorper vitae orci. Aenean rhoncus consequat libero et varius. Curabitur eleifend gravida sodales. Aliquam adipiscing eleifend mi, sit amet suscipit urna semper eget. Nunc feugiat fermentum sapien sit amet ultrices.
+		%p
+			Pellentesque libero turpis, porttitor in dignissim sit amet, dignissim a elit. In hac habitasse platea dictumst. Praesent vel dolor id ipsum egestas hendrerit vulputate vel leo. Nullam eget risus eget ante porttitor bibendum. Cras blandit, justo ut aliquet egestas, lectus magna pulvinar lectus, vitae porta dui massa adipiscing ante. Aliquam id tortor enim. Nulla placerat luctus lacus vitae vulputate. Proin dictum lectus a massa dignissim et bibendum eros ultrices. Etiam elementum, libero id fermentum facilisis, libero nulla accumsan magna, eget congue sem urna a enim. Nam dictum tellus sit amet orci aliquam gravida. Integer augue urna, condimentum eget luctus a, semper eu magna. Nullam a lorem justo. Nam vitae urna mi, ac rhoncus nisi. Donec nibh lorem, faucibus a pulvinar volutpat, feugiat quis turpis. Nam commodo aliquam nibh, a convallis est pellentesque vitae. Integer quis metus sit amet felis rutrum tincidunt eget non ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse a nulla mi. Vivamus nec tortor sed erat sollicitudin pulvinar non et lacus. Vestibulum laoreet odio auctor odio fermentum consectetur.
+		%p
+			Aliquam augue augue, placerat a sollicitudin quis, ultrices at elit. Pellentesque eu est leo, sit amet fermentum est. Quisque semper leo lorem. Donec sollicitudin libero eget nisl euismod placerat at ac orci. Aenean nunc odio, lacinia ut gravida eget, dignissim sed tortor. Fusce eu ultrices lectus. Sed vitae leo et purus condimentum posuere eu sed velit. Integer vitae bibendum erat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque id nulla in odio rhoncus vulputate. Quisque at lacus leo, sollicitudin semper augue. Suspendisse aliquam eleifend imperdiet. Vivamus et massa imperdiet lacus tincidunt semper varius sed tellus. Cras tempor posuere vulputate. Suspendisse ut leo in lectus hendrerit eleifend. Etiam volutpat aliquam dignissim. Praesent nulla ligula, facilisis eu bibendum vitae, porttitor eget leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+		%p
+			Morbi porta volutpat tortor, eu facilisis dui semper non. Nam nibh nibh, porttitor ut mollis et, consectetur at est. Sed fringilla est eget mauris volutpat vestibulum et in quam. Nunc et pulvinar quam. Nulla tempus, dolor ac viverra vulputate, ligula nisl sagittis leo, ut tempor metus velit sit amet libero. Pellentesque vel nulla sed tortor tristique dictum. Curabitur nec ante eu magna bibendum consequat sed id mauris. Donec nunc orci, hendrerit viverra dictum pharetra, cursus sit amet est. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nunc justo, adipiscing et euismod eu, tristique sed metus. Duis porttitor adipiscing pharetra. Quisque mollis tempor enim eleifend consectetur.
+		
+	.sample_right_ads
+		Job Ads
+		=@feed.channel.title
+		.jobs(style='border:solid')
+		- @feed.items.each_with_index do |item,i|
+			.job
+			%a#title(href = "#{item.link}")
+				=item.title
+			.description=item.description[0..140]
