@@ -5,6 +5,7 @@ require 'open-uri'
 require 'haml'
 
 def get_rss (source)
+  
   content = "" 
   open(source) {|s| content = s.read }
   rss = RSS::Parser.parse(content, false)
@@ -37,3 +38,9 @@ get ('/sample/:feed') do
 end
 post ('/sample/select') {redirect("/sample/#{params[:feed]}")}
 
+# construct ads
+
+get ('/adframe') do
+   
+  haml :adbox
+end
