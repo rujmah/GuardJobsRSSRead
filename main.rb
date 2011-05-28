@@ -1,11 +1,12 @@
 require 'sinatra'
-#require 'sinatra/reloader'
+require 'sinatra/reloader'
 require 'rss/2.0'
 require 'open-uri'
 require 'haml'
 
-def get_rss (source)
-  
+
+def get_rss (source = '')
+  source = "http://jobs.guardian.co.uk/jobsrss/?Industry=191&Salary_Min=30000&Salary_Max=39999&CountryCode=GB" if source == ''
   content = "" 
   open(source) {|s| content = s.read }
   rss = RSS::Parser.parse(content, false)
@@ -38,9 +39,10 @@ get ('/sample/:feed') do
 end
 post ('/sample/select') {redirect("/sample/#{params[:feed]}")}
 
-# construct ads
 
-get ('/adframe') do
-   
-  haml :adbox
+get ('/adbox') do
+	@rss = get_rss
+	haml :adbox, :layout => false
 end
+
+get ('/grabad') {haml :grabad}

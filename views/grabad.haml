@@ -1,0 +1,9 @@
+.pre_box(style='border:solid 1px green;padding:2px;')
+	Text before
+-#show_feed    
+-#	%iframe(src='/adbox')
+#box
+%script
+	$('#box').load('/adbox');
+.pre_box(style='border:solid 1px blue;padding:2px;')
+	Text after

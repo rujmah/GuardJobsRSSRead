@@ -7,3 +7,8 @@ Really Basic at the moment.
 
 Built on Sinatra 1.2.3 using Libs RSS and open-uri
 
+
+Features
+--------
+
+

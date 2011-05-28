@@ -1,9 +1,10 @@
-.sample_ads
-  Job Ads
-  =@feed.channel.title
-  .jobs(style='border:solid')
-  - @feed.items.each_with_index do |item,i|
-    .job
-    %a#title(href = "#{item.link}")
-      =item.title
-    .description=item.description[0..140]
+.ad_box(style='border:solid 1px red;padding:2px;width:250px;font:9px helvetia,sans-serif;')
+	Job Ads
+	=@rss.channel.title
+	.jobs(style='border:solid 1px')
+		- @rss.items.each_with_index do |item,i|
+			.job
+			%a#title(href = "#{item.link}")
+				=item.title
+			.description=item.description[0..140]
+			- break if i == 4
