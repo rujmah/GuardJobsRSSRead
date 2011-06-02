@@ -1,0 +1,27 @@
+Guardian Jobs RSS Reader
+========================
+
+POC: basic Ad Server functions
+Built on Sinatra 1.2.3 using Libs RSS and open-uri
+
+Currently, deployed on heroku: http://guardjobapp.heroku.com
+
+Items
+-----
+- take a feed (curr. hard coded)
+- render to display as ads
+
+Dependancies
+------------
+- RSS 2.0
+- open-uri
+- Sinatra
+- haml
+
+Pages
+-----
+- /sample/[feed] - shows a sample article with ads at the side
+- /adbox - shows an ad box 
+- /grabad - example page with the adbox 'grabbed' with jquery call
+
+
